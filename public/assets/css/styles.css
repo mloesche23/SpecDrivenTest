@@ -114,6 +114,11 @@ body {
   height: 32px;
   margin-right: 0.5rem;
 }
+.console-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 0.5rem;
+}
 .console-card .dot {
   width: 10px;
   height: 10px;
