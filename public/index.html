@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Retro Emulation Hub</title>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" role="banner">
+      <h1>Retro Emulation Hub</h1>
+      <nav aria-label="Primary" class="site-nav">
+        <ul>
+          <li><a href="./index.html" data-nav>Home</a></li>
+          <li><a href="./library.html" data-nav>Library</a></li>
+          <li><a href="./settings.html" data-nav>Settings</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main" class="container" role="main">
+      <section aria-labelledby="consoles-title">
+        <h2 id="consoles-title">Choose a Console</h2>
+        <p>Browse classic systems. Selecting a console will filter the library.</p>
+        <div class="grid consoles" id="console-list">
+          <!-- Phase 3 (US1): Real console options -->
+          <a class="card console-card console-nes" href="./library.html?console=NES" aria-label="Browse NES titles">
+            <span class="dot" aria-hidden="true"></span>
+            <img src="./assets/img/placeholder.svg" alt="NES icon" loading="lazy" /> NES
+          </a>
+          <a class="card console-card console-snes" href="./library.html?console=SNES" aria-label="Browse SNES titles">
+            <span class="dot" aria-hidden="true"></span>
+            <img src="./assets/img/placeholder.svg" alt="SNES icon" loading="lazy" /> SNES
+          </a>
+          <a class="card console-card console-gameboy" href="./library.html?console=Game%20Boy" aria-label="Browse Game Boy titles">
+            <span class="dot" aria-hidden="true"></span>
+            <img src="./assets/img/placeholder.svg" alt="Game Boy icon" loading="lazy" /> Game Boy
+          </a>
+          <a class="card console-card console-genesis" href="./library.html?console=Sega%20Genesis" aria-label="Browse Sega Genesis titles">
+            <span class="dot" aria-hidden="true"></span>
+            <img src="./assets/img/placeholder.svg" alt="Sega Genesis icon" loading="lazy" /> Sega Genesis
+          </a>
+          <a class="card console-card console-ps1" href="./library.html?console=PlayStation" aria-label="Browse PlayStation titles">
+            <span class="dot" aria-hidden="true"></span>
+            <img src="./assets/img/placeholder.svg" alt="PlayStation icon" loading="lazy" /> PlayStation
+          </a>
+          <a class="card console-card console-n64" href="./library.html?console=Nintendo%2064" aria-label="Browse Nintendo 64 titles">
+            <span class="dot" aria-hidden="true"></span>
+            <img src="./assets/img/placeholder.svg" alt="Nintendo 64 icon" loading="lazy" /> Nintendo 64
+          </a>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer" role="contentinfo">
+      <small>&copy; 2026 Retro Emulation Hub (informational only)</small>
+    </footer>
+    <script src="./assets/js/theme.js" defer></script>
+    <script src="./assets/js/nav.js" defer></script>
+  </body>
+  </html>

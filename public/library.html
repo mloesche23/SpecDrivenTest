@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Game Library • Retro Emulation Hub</title>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" role="banner">
+      <h1>Game Library</h1>
+      <nav aria-label="Primary" class="site-nav">
+        <ul>
+          <li><a href="./index.html" data-nav>Home</a></li>
+          <li><a href="./library.html" data-nav>Library</a></li>
+          <li><a href="./settings.html" data-nav>Settings</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main" class="container" role="main">
+      <section aria-labelledby="library-title">
+        <h2 id="library-title">Browse Titles</h2>
+        <p>Real retro game titles listed for nostalgia. No downloads or emulation.</p>
+        <div id="library-list" class="grid" aria-live="polite">
+          <!-- Populated in Phase 4 (US2) from games.json -->
+          <div class="card placeholder">Loading library…</div>
+        </div>
+        <noscript>
+          <h3>Titles (static list)</h3>
+          <p>Enable JavaScript for enhanced filtering and details. The list below is a static sample:</p>
+          <ul>
+            <li>Super Mario Bros (NES)</li>
+            <li>The Legend of Zelda (NES)</li>
+            <li>Metroid (NES)</li>
+            <li>Mega Man 2 (NES)</li>
+            <li>Super Mario World (SNES)</li>
+            <li>The Legend of Zelda: A Link to the Past (SNES)</li>
+            <li>Chrono Trigger (SNES)</li>
+            <li>Super Metroid (SNES)</li>
+            <li>Tetris (Game Boy)</li>
+            <li>Pokémon Red (Game Boy)</li>
+            <li>The Legend of Zelda: Link's Awakening (Game Boy)</li>
+            <li>Kirby's Dream Land (Game Boy)</li>
+            <li>Sonic the Hedgehog (Sega Genesis)</li>
+            <li>Streets of Rage 2 (Sega Genesis)</li>
+            <li>Golden Axe (Sega Genesis)</li>
+            <li>Final Fantasy VII (PlayStation)</li>
+            <li>Metal Gear Solid (PlayStation)</li>
+            <li>Castlevania: Symphony of the Night (PlayStation)</li>
+            <li>Super Mario 64 (Nintendo 64)</li>
+            <li>The Legend of Zelda: Ocarina of Time (Nintendo 64)</li>
+            <li>GoldenEye 007 (Nintendo 64)</li>
+          </ul>
+        </noscript>
+      </section>
+    </main>
+    <footer class="site-footer" role="contentinfo">
+      <small>&copy; 2026 Retro Emulation Hub</small>
+    </footer>
+    <script src="./assets/js/theme.js" defer></script>
+    <script src="./assets/js/library.js" defer></script>
+    <script src="./assets/js/nav.js" defer></script>
+  </body>
+  </html>

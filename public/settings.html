@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Settings • Retro Emulation Hub</title>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" role="banner">
+      <h1>Settings</h1>
+      <nav aria-label="Primary" class="site-nav">
+        <ul>
+          <li><a href="./index.html" data-nav>Home</a></li>
+          <li><a href="./library.html" data-nav>Library</a></li>
+          <li><a href="./settings.html" data-nav>Settings</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main" class="container" role="main">
+      <section aria-labelledby="theme-title">
+        <h2 id="theme-title">Theme</h2>
+        <p>Switch between Light and Dark themes. Your selection applies during this session.</p>
+        <form id="theme-form" class="theme-form">
+          <fieldset>
+            <legend>Choose Theme</legend>
+            <label><input type="radio" name="theme" value="light" checked /> Light</label>
+            <label><input type="radio" name="theme" value="dark" /> Dark</label>
+          </fieldset>
+        </form>
+      </section>
+    </main>
+    <footer class="site-footer" role="contentinfo">
+      <small>&copy; 2026 Retro Emulation Hub</small>
+    </footer>
+    <script src="./assets/js/theme.js" defer></script>
+    <script src="./assets/js/nav.js" defer></script>
+    <script>
+      // Phase 3 (US3): Theme switching is implemented in theme.js; this wires the form.
+      document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('theme-form');
+        // Sync radio with current theme
+        const current = (window.Theme && window.Theme.getTheme && window.Theme.getTheme()) || 'light';
+        const input = form.querySelector(`input[name="theme"][value="${current}"]`);
+        if (input) input.checked = true;
+        form.addEventListener('change', (e) => {
+          if (e.target && e.target.name === 'theme') {
+            window.Theme && window.Theme.setTheme(e.target.value);
+          }
+        });
+      });
+    </script>
+  </body>
+  </html>

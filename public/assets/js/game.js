@@ -1,0 +1,38 @@
+// Game details placeholder; actual rendering in Phase 4 (US2)
+(function () {
+  function getQuery() {
+    const q = new URLSearchParams(location.search);
+    return { title: q.get('title') };
+  }
+  async function loadGames() {
+    const res = await fetch('./assets/data/games.json', { cache: 'no-cache' });
+    if (!res.ok) throw new Error('Failed to load games.json');
+    return res.json();
+  }
+  function notFound(el, title) {
+    el.innerHTML = `<h2>Not found</h2><p class="muted">No details for ${title || 'this game'}.</p>`;
+  }
+  async function init() {
+    const el = document.getElementById('game-details');
+    if (!el) return;
+    const { title } = getQuery();
+    if (!title) {
+      notFound(el);
+      return;
+    }
+    try {
+      const games = await loadGames();
+      const decoded = decodeURIComponent(title);
+      const game = games.find((g) => g.title === decoded);
+      if (!game) return notFound(el, decoded);
+      el.innerHTML = `
+        <h2>${game.title}</h2>
+        <p><strong>Console:</strong> ${game.console}${game.year ? ` • ${game.year}` : ''}</p>
+        <p class="muted">Informational only. No emulation or downloads.</p>
+      `;
+    } catch (err) {
+      notFound(el, title);
+    }
+  }
+  document.addEventListener('DOMContentLoaded', init);
+})();
