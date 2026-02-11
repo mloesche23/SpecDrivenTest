@@ -5,7 +5,7 @@
     return { console: q.get('console') };
   }
   function card(game) {
-    const href = `./game.html?title=${encodeURIComponent(game.title)}`;
+    const href = `/game.html?title=${encodeURIComponent(game.title)}`;
     const cls = consoleClass(game.console);
     return `<a class="card ${cls}" href="${href}" aria-label="View ${game.title} details">
       <span class="dot" aria-hidden="true"></span>
@@ -24,7 +24,7 @@
     return '';
   }
   async function loadGames() {
-    const res = await fetch('./assets/data/games.json', { cache: 'no-cache' });
+    const res = await fetch('/assets/data/games.json', { cache: 'no-cache' });
     if (!res.ok) throw new Error('Failed to load games.json');
     return res.json();
   }
