@@ -119,6 +119,17 @@ body {
   height: 24px;
   margin-right: 0.5rem;
 }
+
+/* Cover images for cards and details */
+.cover {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+  background: var(--card);
+}
+.cover-large { height: 220px; }
 .console-card .dot {
   width: 10px;
   height: 10px;

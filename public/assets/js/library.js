@@ -9,7 +9,10 @@
     const cls = consoleClass(game.console);
     const icon = iconForConsole(game.console);
     const alt = `${game.console} icon`;
+    const slug = slugify(game.title);
+    const cover = `assets/img/covers/${slug}.jpg`;
     return `<a class="card ${cls}" href="${href}" aria-label="View ${game.title} details">
+      <img class="cover" src="${cover}" alt="Cover art for ${game.title}" loading="lazy" onerror="this.src='assets/img/cover-placeholder.svg'" />
       <img class="console-icon" src="${icon}" alt="${alt}" loading="lazy" />
       <span class="dot" aria-hidden="true"></span>
       <strong>${game.title}</strong><br/>
@@ -35,6 +38,12 @@
     if (n === 'playstation') return 'assets/img/console-ps1.svg';
     if (n === 'nintendo 64') return 'assets/img/console-n64.svg';
     return 'assets/img/placeholder.svg';
+  }
+  function slugify(text) {
+    return String(text || '')
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)/g, '');
   }
   async function loadGames() {
     const res = await fetch('assets/data/games.json', { cache: 'no-cache' });
